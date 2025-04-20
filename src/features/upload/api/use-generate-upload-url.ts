@@ -2,10 +2,8 @@ import { useMutation } from "convex/react";
 
 import { api } from "../../../../convex/_generated/api";
 import { useCallback, useMemo, useState } from "react";
-import { Id } from "../../../../convex/_generated/dataModel";
 
-type RequestType = { name: string };
-type ResponseType = Id<"workspaces"> | null;
+type ResponseType = string | null
 
 type Options = {
   onSuccess?: (data: ResponseType) => void;
@@ -14,7 +12,7 @@ type Options = {
   throwError?: boolean;
 };
 
-export const useCreateWorkspace = () => {
+export const useGenerateUploadUrl = () => {
   const [data, setData] = useState<ResponseType>(null);
   const [error, setError] = useState<Error | null>(null);
   const [status, setStatus] = useState<"success" | "error" | "settled" | "pending" | null>(null)
@@ -29,15 +27,15 @@ export const useCreateWorkspace = () => {
   const isError = useMemo(() => status === "error", [status])
   const isSettled = useMemo(() => status === "settled", [status])
 
-  const mutation = useMutation(api.workspace.create);
+  const mutation = useMutation(api.upload.generateUploadUrl);
   const mutate = useCallback(
-    async (value: RequestType, Options?: Options) => {
+    async (_value: {}, Options?: Options) => {
       try {
         setData(null);
         setError(null);
         setStatus("pending")
 
-        const response = await mutation(value);
+        const response = await mutation();
         Options?.onSuccess?.(response);
         return response;
       } catch (error) {
