@@ -12,7 +12,7 @@ interface UesGetMessagesProps {
 
 export type GetMessagesReturnType = typeof api.messages.get._returnType["page"];
 
-export const uesGetMessages = ({
+export const useGetMessages = ({
     channelId,
     conversationId,
     parentMessageId,

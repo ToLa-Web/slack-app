@@ -5,13 +5,13 @@ import { useChannelId } from "@/hooks/use-channel-id"
 import { Loader, TriangleAlert } from "lucide-react"
 import { Header } from "./header"
 import { ChatInput } from "./chat-input"
-import { uesGetMessages } from "@/features/messages/api/use-get-messages"
+import { useGetMessages } from "@/features/messages/api/use-get-messages"
 import { MessageList } from "@/components/message-list"
 
 const ChannelIdPage = () => {
   const channelId = useChannelId()
 
-  const { results, status, loadMore } = uesGetMessages({ channelId })
+  const { results, status, loadMore } = useGetMessages({ channelId })
   const { data: channel, isLoading: channelLoading} = useGetChannel({ id: channelId })
 
   console.log({results})

@@ -71,14 +71,14 @@ const Editor = ({
           [{ header: [1, 2, 3, false] }],
           ['bold', 'italic', 'underline', 'strike'],
           [{ list: 'ordered' }, { list: 'bullet' }],
-          [{ script: 'sub' }, { script: 'super' }],
+          /* [{ script: 'sub' }, { script: 'super' }],
           [{ indent: '-1' }, { indent: '+1' }],
           [{ direction: 'rtl' }],
           [{ color: [] },],
           [{ font: [] }],
           [{ align: [] }],
           ['link', 'image'],
-          ['clean'],
+          ['clean'], */
         ],
         keyboard: {
           bindings: {
