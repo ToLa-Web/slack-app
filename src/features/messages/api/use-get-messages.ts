@@ -5,7 +5,7 @@ import { Id } from "../../../../convex/_generated/dataModel";
 const BATCH_SIZE = 20;
 
 interface UesGetMessagesProps {
-    channelId: Id<"channels">;
+    channelId?: Id<"channels">; // change something
     conversationId?: Id<"conversations">;
     parentMessageId?: Id<"messages">;
 }
@@ -28,5 +28,4 @@ export const useGetMessages = ({
         status,
         loadMore: () => loadMore(BATCH_SIZE),
     }
-
 }

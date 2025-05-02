@@ -107,7 +107,7 @@ const SignUpCard = ({ setStats }: SignUpCardProps) => {
             placeholder="Confirm Password"
             required
           />
-          <Button type="submit" className="w-full" size="lg" disabled={false}>
+          <Button type="submit" className="w-full" size="lg" disabled={pending}>
             Contiue
           </Button>
         </form>

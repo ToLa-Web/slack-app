@@ -14,7 +14,7 @@ const WorkspaceIdPage = () => {
   const router = useRouter();
   const [ open, setOpen] = useCreateChannelModal();
   
-  const { data: member, isloading: memberLoading } = useCurrentMember({ workspaceId });
+  const { data: member, isLoading: memberLoading } = useCurrentMember({ workspaceId });
   const { data: workspace, isLoading: workspaceLoading } = useGetWorkspace({ id: workspaceId});
   const { data: channels, isLoading: channelsLoading } = useGetChannels({ workspaceId });
   

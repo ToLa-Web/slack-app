@@ -68,7 +68,7 @@ const Editor = ({
       placeholder: placeholderRef.current,
       modules: {
         toolbar: [
-          [{ header: [1, 2, 3, false] }],
+          /* [{ header: [1, 2, 3, false] }], */
           ['bold', 'italic', 'underline', 'strike'],
           [{ list: 'ordered' }, { list: 'bullet' }],
           /* [{ script: 'sub' }, { script: 'super' }],
@@ -154,10 +154,10 @@ const Editor = ({
     }
   }
   
-  const onEmojiSelect = (emoji: any) => {
+  const onEmojiSelect = (emojiValue: string) => {
     const quill = quillRef.current
 
-    quill?.insertText(quill.getSelection()?.index || 0, emoji.native); // It ensures the selected emoji is inserted at the current cursor position in the Quill editor
+    quill?.insertText(quill.getSelection()?.index || 0, emojiValue); // It ensures the selected emoji is inserted at the current cursor position in the Quill editor
   }
 
   const isEmpty = !image && text.replace(/<(.|\n)*?>/g, "").trim().length === 0;
@@ -203,7 +203,7 @@ const Editor = ({
                 disabled={disabled}
                 size="iconSm"
                 variant="ghost"
-                onClick={toggleToolbar}
+                  onClick={toggleToolbar}
               >
                 <PiTextAa className="!size-5" />
               </Button>

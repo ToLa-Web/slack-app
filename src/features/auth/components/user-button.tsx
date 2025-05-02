@@ -13,9 +13,9 @@ import { useAuthActions } from "@convex-dev/auth/react";
 
 export const UserButton = () => {
     const { signOut } = useAuthActions()
-    const { data, isloading } = useCurrentUser();
+    const { data, isLoading } = useCurrentUser();
 
-    if(isloading) {
+    if(isLoading) {
         return <Loader className="size-4 animate-spin text-muted-foreground"/>
     }
     if(!data) {
