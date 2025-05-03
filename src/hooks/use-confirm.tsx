@@ -20,7 +20,7 @@ export const useConfirm = (
   } | null>(null);
 
   const confirm = () =>
-    new Promise((resolve, rejects) => {
+    new Promise((resolve, /* rejects */) => {
       setPromise({ resolve });
     });
   const handleClose = () => {

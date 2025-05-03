@@ -4,7 +4,6 @@ import { useWorkspaceId } from "@/hooks/use-workspace-id";
 import { Info, Search } from "lucide-react";
 import { DialogTitle } from "@/components/ui/dialog";
 import {
-  Command,
   CommandDialog,
   CommandEmpty,
   CommandGroup,

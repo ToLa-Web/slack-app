@@ -22,7 +22,7 @@ export const UserButton = () => {
         return null
     }
 
-    const { name, email, image} = data
+    const { name, image} = data
 
     const avatarFallback = name!.charAt(0).toUpperCase()
 
